@@ -458,6 +458,9 @@ if(MSVC)
                                          # unsigned type, result still unsigned:
                                          # include\google\protobuf\wire_format_l
                                          # ite.h
+                                 /wd4127 # conditional expression is constant
+                                 /wd4125 # decimal digit terminates octal escape sequence
+                                 /wd4100 # unreferenced formal parameter
                                  ${EXTRA_FLAGS})
   target_compile_options(onnx
                          PRIVATE /MP
@@ -470,7 +473,7 @@ if(MSVC)
                                  /wd4146 # unary minus operator applied to
                                          # unsigned type, result still unsigned
                                  ${EXTRA_FLAGS})
-  add_msvc_runtime_flag(onnx_proto)
+  #add_msvc_runtime_flag(onnx_proto)
   add_msvc_runtime_flag(onnx)
   set(onnx_static_library_flags
       -IGNORE:4221 # LNK4221: This object file does not define any previously
