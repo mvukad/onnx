@@ -491,6 +491,11 @@ if(MSVC)
                                          # unsigned type, result still unsigned:
                                          # include\google\protobuf\wire_format_l
                                          # ite.h
+                                 /wd4127
+                                 /wd4125
+                                 /wd4251
+                                 /wd4244
+                                 /wd4267
                                  ${EXTRA_FLAGS})
   target_compile_options(onnx
                          PRIVATE /MP
