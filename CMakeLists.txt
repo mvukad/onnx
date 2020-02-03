@@ -481,7 +481,6 @@ endif()
 if(MSVC)
   target_compile_options(onnx_proto
                          PRIVATE /MP
-                                 /WX
                                  /wd4800 # disable warning type' : forcing value
                                          # to bool 'true' or 'false'
                                          # (performance warning)
@@ -491,15 +490,9 @@ if(MSVC)
                                          # unsigned type, result still unsigned:
                                          # include\google\protobuf\wire_format_l
                                          # ite.h
-                                 /wd4127
-                                 /wd4125
-                                 /wd4251
-                                 /wd4244
-                                 /wd4267
                                  ${EXTRA_FLAGS})
   target_compile_options(onnx
                          PRIVATE /MP
-                                 /WX
                                  /wd4800 # disable warning type' : forcing value
                                          # to bool 'true' or 'false'
                                          # (performance warning)
@@ -507,7 +500,6 @@ if(MSVC)
                                          # exceeded, name was truncated
                                  /wd4146 # unary minus operator applied to
                                          # unsigned type, result still unsigned
-                                 /wd4996
                                  ${EXTRA_FLAGS})
   add_msvc_runtime_flag(onnx_proto)
   add_msvc_runtime_flag(onnx)
