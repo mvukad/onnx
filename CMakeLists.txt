@@ -507,6 +507,7 @@ if(MSVC)
                                          # exceeded, name was truncated
                                  /wd4146 # unary minus operator applied to
                                          # unsigned type, result still unsigned
+                                 /wd4996
                                  ${EXTRA_FLAGS})
   add_msvc_runtime_flag(onnx_proto)
   add_msvc_runtime_flag(onnx)
