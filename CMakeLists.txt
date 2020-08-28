@@ -512,7 +512,6 @@ endif()
 if(MSVC)
   target_compile_options(onnx_proto
                          PRIVATE /MP
-                                 /WX
                                  /wd4800 # disable warning type' : forcing value
                                          # to bool 'true' or 'false'
                                          # (performance warning)
@@ -530,7 +529,6 @@ if(MSVC)
                                  ${EXTRA_FLAGS})
   target_compile_options(onnx
                          PRIVATE /MP
-                                 /WX
                                  /wd4800 # disable warning type' : forcing value
                                          # to bool 'true' or 'false'
                                          # (performance warning)
